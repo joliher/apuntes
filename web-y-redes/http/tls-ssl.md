@@ -116,8 +116,10 @@ Para garantizar que el archivo `.crt` no ha sido alterado por un atacante ni su 
 1. La CA toma el contenido del certificado (dominio, clave pública, etc.) y genera un **hash**.
 2. La CA cifra ese hash utilizando su propia **clave privada de CA** (desconocida para el público). Ese hash cifrado es la **firma digital**.
 
-```text
-[ Contenido del Certificado ] ──( Hash )──> [ Hash del Certificado ] ──( Cifrado con Clave Privada CA )──> [ FIRMA DIGITAL ]
+```mermaid
+flowchart LR
+    A["Contenido del Certificado"] -->|"Hash"| B["Hash del Certificado"]
+    B -->|"Cifrado con Clave Privada CA"| C["FIRMA DIGITAL"]
 ```
 
 ### Proceso de Verificación en el Cliente
@@ -143,8 +145,8 @@ En entornos corporativos o empresariales, los firewalls avanzados suelen impleme
    - **Conexión 2 (Firewall ➔ Servidor Real):** El firewall abre una segunda conexión TLS independiente con la web destino.
 4. Al estar situado en medio de las dos conexiones TLS, el firewall puede **descifrar, inspeccionar la carga útil HTTP y volver a cifrar** el tráfico.
 
-```text
-[ Cliente ] ──( TLS 1: Firma CA Corporativa )──> [ Firewall / Proxy ] ──( TLS 2: Certificado Real )──> [ Servidor Destino ]
-                                                    │
-                                         Descifra e Inspecciona
+```mermaid
+flowchart LR
+    Cliente["Cliente"] -->|"TLS 1: Firma CA Corporativa"| FW["Firewall / Proxy<br/>(Descifra e Inspecciona)"]
+    FW -->|"TLS 2: Certificado Real"| Servidor["Servidor Destino"]
 ```
