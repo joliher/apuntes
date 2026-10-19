@@ -12,7 +12,7 @@ Es de **obligado cumplimiento** para:
 
 ## 📐 Dimensiones de Seguridad: DICAT
 
-El ENS amplía la tríada DIC del ISO 27001 añadiendo dos dimensiones más, formando el modelo **DICAT**:
+El ENS amplía la tríada DIC del [ISO 27001](iso-27001.md) añadiendo dos dimensiones más, formando el modelo **DICAT**:
 
 | Dimensión | Descripción | ISO 27001 | ENS |
 | :--- | :--- | :---: | :---: |

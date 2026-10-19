@@ -43,3 +43,7 @@ flowchart LR
     NIS2 -->|"Complementa"| RGPD["🇪🇺 RGPD\n(Datos personales)"]
     NIS2 -->|"Referencia técnica"| ISO["🌐 ISO 27001\n(SGSI)"]
 ```
+
+- [ENS](ens.md) — Transposición española más próxima al espíritu de NIS 2.
+- [RGPD](rgpd.md) — Marco de protección de datos personales que NIS 2 complementa.
+- [ISO 27001](iso-27001.md) — Estándar de gestión de seguridad usado como referencia técnica.
